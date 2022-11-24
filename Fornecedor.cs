@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExercicioBanco
 {
-    internal class Fornecedor
+    public class Fornecedor
     {
         public int Cnpj { get; set; }
         public string Razao_social { get; set; }

@@ -172,6 +172,7 @@
             this.btn_salvar_fornecedores.TabIndex = 13;
             this.btn_salvar_fornecedores.Text = "Salvar dados";
             this.btn_salvar_fornecedores.UseVisualStyleBackColor = false;
+            this.btn_salvar_fornecedores.Click += new System.EventHandler(this.btn_salvar_fornecedores_Click);
             // 
             // btn_fechar_fornecedores
             // 
