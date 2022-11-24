@@ -25,7 +25,7 @@ namespace ExercicioBanco
         {
             if (conexao_bd.State == System.Data.ConnectionState.Open)
             {
-                conexao_bd.Clone();
+                conexao_bd.Close();
             }
         }
     }
