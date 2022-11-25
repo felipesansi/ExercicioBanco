@@ -43,6 +43,8 @@
             this.mask_telefone = new System.Windows.Forms.MaskedTextBox();
             this.btn_salvar_fornecedores = new System.Windows.Forms.Button();
             this.btn_fechar_fornecedores = new System.Windows.Forms.Button();
+            this.dataGrid_fornecdores = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_fornecdores)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -191,11 +193,20 @@
             this.btn_fechar_fornecedores.UseVisualStyleBackColor = false;
             this.btn_fechar_fornecedores.Click += new System.EventHandler(this.btn_fechar_fornecedores_Click);
             // 
+            // dataGrid_fornecdores
+            // 
+            this.dataGrid_fornecdores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_fornecdores.Location = new System.Drawing.Point(30, 348);
+            this.dataGrid_fornecdores.Name = "dataGrid_fornecdores";
+            this.dataGrid_fornecdores.Size = new System.Drawing.Size(838, 176);
+            this.dataGrid_fornecdores.TabIndex = 15;
+            // 
             // Tela_fornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 489);
+            this.ClientSize = new System.Drawing.Size(931, 567);
+            this.Controls.Add(this.dataGrid_fornecdores);
             this.Controls.Add(this.btn_fechar_fornecedores);
             this.Controls.Add(this.btn_salvar_fornecedores);
             this.Controls.Add(this.mask_telefone);
@@ -215,6 +226,7 @@
             this.Name = "Tela_fornecedores";
             this.Text = "Tela_fornecedores";
             this.Load += new System.EventHandler(this.Tela_fornecedores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_fornecdores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +249,6 @@
         private System.Windows.Forms.MaskedTextBox mask_telefone;
         private System.Windows.Forms.Button btn_salvar_fornecedores;
         private System.Windows.Forms.Button btn_fechar_fornecedores;
+        private System.Windows.Forms.DataGridView dataGrid_fornecdores;
     }
 }

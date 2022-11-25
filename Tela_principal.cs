@@ -45,5 +45,9 @@ namespace ExercicioBanco
         {
             Abrir_janela(new Tela_alimenticio());
         }
+
+        private void Tela_principal_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -80,7 +80,7 @@
             this.Painel_principal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Painel_principal.Location = new System.Drawing.Point(0, 24);
             this.Painel_principal.Name = "Painel_principal";
-            this.Painel_principal.Size = new System.Drawing.Size(915, 426);
+            this.Painel_principal.Size = new System.Drawing.Size(915, 547);
             this.Painel_principal.TabIndex = 1;
             // 
             // label2
@@ -109,12 +109,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 450);
+            this.ClientSize = new System.Drawing.Size(915, 571);
             this.Controls.Add(this.Painel_principal);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tela_principal";
             this.Text = "Sistema";
+            this.Load += new System.EventHandler(this.Tela_principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.Painel_principal.ResumeLayout(false);

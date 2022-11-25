@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,41 +18,16 @@ namespace ExercicioBanco
         {
             InitializeComponent();
         }
-        bool autencado =false;
+      
+        Fornecedor fornecedor = new Fornecedor();
+        bool passou = false;
+        DataTable dt;
         Conexao conexao = new Conexao();
 
-        public bool inseir(Fornecedor f)
-        {
-            try
-            {
-
-                string sql = "insert to tb_fornecedores  values (@cnpj,@email,@telefone, @nomef, @inscricao)";
-                SqlCommand comando = new SqlCommand();
-                comando.CommandText = sql;
-                comando.CommandType = CommandType.Text;
-                comando.Parameters.AddWithValue("@cnpj", f.Cnpj);
-                comando.Parameters.AddWithValue("@email", f.Email);
-                comando.Parameters.AddWithValue("@telefone", f.Telefone);
-                comando.Parameters.AddWithValue("@nomef", f.Nome_fantasia);
-                comando.Parameters.AddWithValue("@inscricao", f.Inscricao_estadual);
-             
-                 comando.ExecuteNonQuery();
-
-              
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
-            return autencado;
-                
-        }
         private void Tela_fornecedores_Load(object sender, EventArgs e)
         {
-
+            dt=conexao.selectforncedor();
+            dataGrid_fornecdores.DataSource= dt;
         }
 
         private void btn_fechar_fornecedores_Click(object sender, EventArgs e)
@@ -61,7 +37,26 @@ namespace ExercicioBanco
 
         private void btn_salvar_fornecedores_Click(object sender, EventArgs e)
         {
-          
+
+            fornecedor.Cnpj = int.Parse(txb_cnpj.Text);
+            fornecedor.Razao_social = txb_razaoS.Text;
+            fornecedor.Email = txb_email.Text;
+            fornecedor.Telefone = mask_telefone.Text;
+            fornecedor.Nome_fantasia = txb_fantasia.Text;
+            fornecedor.Inscricao_estadual = txb_inscricao.Text;
+           
+         
+           passou = conexao.inseir(fornecedor);
+            if (conexao.passa)
+            {
+                MessageBox.Show("cadastro feito");
+
+            }
+            else
+            {
+                MessageBox.Show("erro");
+            }      
+
         }
     }
 }
