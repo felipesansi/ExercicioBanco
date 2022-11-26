@@ -38,23 +38,9 @@ namespace ExercicioBanco
         private void btn_salvar_fornecedores_Click(object sender, EventArgs e)
         {
 
-            fornecedor.Cnpj = int.Parse(txb_cnpj.Text);
-            fornecedor.Razao_social = txb_razaoS.Text;
-            fornecedor.Email = txb_email.Text;
-            fornecedor.Telefone = mask_telefone.Text;
-            fornecedor.Nome_fantasia = txb_fantasia.Text;
-            fornecedor.Inscricao_estadual = txb_inscricao.Text;
-           
+            
          
-           passou = conexao.inseir(fornecedor);
-            if (conexao.passa)
-            {
-                MessageBox.Show("cadastro feito");
-
-            }
-            else
-            {
-                MessageBox.Show("erro");
+         
             }      
 
         }
