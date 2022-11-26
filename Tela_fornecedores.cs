@@ -20,23 +20,15 @@ namespace ExercicioBanco
         }
 
         Fornecedor fornecedor = new Fornecedor();
-        bool passou = false;
+      Banco Banco = new Banco();
         DataTable dt;
         Conexao conexao = new Conexao();
-
+       
         private void Tela_fornecedores_Load(object sender, EventArgs e)
         {
-            try
-            {
 
-                string sql = "SELECT (cnpj AS CNPJ,email AS EMAIL,telefone AS TELEFONE,nome_fatasia AS NOME_FANTASIA, inscricao_estadual AS INSCRIÇÃO_ESTADUAL,razao_social AS RAZÃO SOCIAL ";
-                MySqlCommand CMD = new MySqlCommand(sql, conexao.conectar());
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            dt = Banco.Select_fornecedores();
+            dataGrid_fornecdores.DataSource = dt;
         }
 
         private void btn_fechar_fornecedores_Click(object sender, EventArgs e)
@@ -59,7 +51,7 @@ namespace ExercicioBanco
                 fornecedor.Email = txb_email.Text;
                 fornecedor.Telefone = mask_telefone.Text;
                 fornecedor.Nome_fantasia = txb_fantasia.Text;
-                fornecedor.Razao_social = txb_inscricao.Text;
+                fornecedor.Razao_social = txb_razaoS.Text;
                 fornecedor.Inscricao_estadual = txb_inscricao.Text;
                 banco .inserir(fornecedor);
             }

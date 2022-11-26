@@ -44,6 +44,10 @@
             this.btn_salvar_fornecedores = new System.Windows.Forms.Button();
             this.btn_fechar_fornecedores = new System.Windows.Forms.Button();
             this.dataGrid_fornecdores = new System.Windows.Forms.DataGridView();
+            this.txb_id = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_fornecdores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,11 +170,11 @@
             this.btn_salvar_fornecedores.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_salvar_fornecedores.FlatAppearance.BorderSize = 0;
             this.btn_salvar_fornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_salvar_fornecedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salvar_fornecedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar_fornecedores.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_salvar_fornecedores.Location = new System.Drawing.Point(340, 281);
+            this.btn_salvar_fornecedores.Location = new System.Drawing.Point(30, 496);
             this.btn_salvar_fornecedores.Name = "btn_salvar_fornecedores";
-            this.btn_salvar_fornecedores.Size = new System.Drawing.Size(218, 43);
+            this.btn_salvar_fornecedores.Size = new System.Drawing.Size(121, 43);
             this.btn_salvar_fornecedores.TabIndex = 13;
             this.btn_salvar_fornecedores.Text = "Salvar dados";
             this.btn_salvar_fornecedores.UseVisualStyleBackColor = false;
@@ -195,17 +199,58 @@
             // 
             // dataGrid_fornecdores
             // 
+            this.dataGrid_fornecdores.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGrid_fornecdores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_fornecdores.Location = new System.Drawing.Point(30, 348);
+            this.dataGrid_fornecdores.Location = new System.Drawing.Point(30, 314);
             this.dataGrid_fornecdores.Name = "dataGrid_fornecdores";
             this.dataGrid_fornecdores.Size = new System.Drawing.Size(838, 176);
             this.dataGrid_fornecdores.TabIndex = 15;
+            // 
+            // txb_id
+            // 
+            this.txb_id.Enabled = false;
+            this.txb_id.Location = new System.Drawing.Point(66, 57);
+            this.txb_id.Multiline = true;
+            this.txb_id.Name = "txb_id";
+            this.txb_id.Size = new System.Drawing.Size(76, 29);
+            this.txb_id.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 18);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "ID:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(97, 278);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 20);
+            this.textBox1.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 280);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 15);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Pesquisar:";
             // 
             // Tela_fornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 567);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txb_id);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.dataGrid_fornecdores);
             this.Controls.Add(this.btn_fechar_fornecedores);
             this.Controls.Add(this.btn_salvar_fornecedores);
@@ -250,5 +295,9 @@
         private System.Windows.Forms.Button btn_salvar_fornecedores;
         private System.Windows.Forms.Button btn_fechar_fornecedores;
         private System.Windows.Forms.DataGridView dataGrid_fornecdores;
+        private System.Windows.Forms.TextBox txb_id;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace ExercicioBanco
         internal void inserir(Fornecedor f)
         {
             Conexao conexao = new Conexao();
+            DataTable dt;
 
             try
             {
@@ -36,6 +38,27 @@ namespace ExercicioBanco
                 MessageBox.Show("erro de banco " + erro);
             }
 
+        }
+      
+        public DataTable Select_fornecedores()
+        {
+            DataTable dt = new  DataTable();
+            Conexao conexao1 = new Conexao();
+            try
+            {
+                string sql = "select cnpj as CNPJ,email as Email,telefone as Telefone ,nome_fatasia as Nome_fantasia, inscricao_estadual as Insceição_estadual,razao_social as Razão_social from tb_fornecedor" ;
+                MySqlCommand cmd = new MySqlCommand(sql, conexao1.conectar());
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+               
+                da.Fill(dt);
+
+            }
+            catch (MySqlException erro)
+            {
+
+                MessageBox.Show(erro.Message);
+            }
+            return dt;
         }
     }
 }
