@@ -85,6 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alimenticio.cs" />
+    <Compile Include="Banco.cs" />
+    <Compile Include="Conexao.cs" />
     <Compile Include="Tela_alimenticio.cs">
       <SubType>Form</SubType>
     </Compile>
