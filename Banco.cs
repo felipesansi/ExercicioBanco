@@ -231,7 +231,7 @@ namespace ExercicioBanco
             DataTable dt = new DataTable();
             try
             {
-                String sql = "SELECT * FROM tb_forncedor where id o LIKE '%" + pequisarPa + "%' or nome_fatasia LIKE '%" + pequisarPa + "%'";
+                String sql = "SELECT * FROM tb_fornecedor where id  LIKE '%" + pequisarPa + "%'";
 
                 MySqlCommand cmd = new MySqlCommand(sql, classe_Conexao.conectar());
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
