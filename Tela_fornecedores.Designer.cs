@@ -48,6 +48,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btn_atualizar_fornecedor = new System.Windows.Forms.Button();
+            this.btn_deletar_fornecedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_fornecdores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,9 +174,9 @@
             this.btn_salvar_fornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvar_fornecedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar_fornecedores.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_salvar_fornecedores.Location = new System.Drawing.Point(30, 496);
+            this.btn_salvar_fornecedores.Location = new System.Drawing.Point(302, 268);
             this.btn_salvar_fornecedores.Name = "btn_salvar_fornecedores";
-            this.btn_salvar_fornecedores.Size = new System.Drawing.Size(121, 43);
+            this.btn_salvar_fornecedores.Size = new System.Drawing.Size(121, 30);
             this.btn_salvar_fornecedores.TabIndex = 13;
             this.btn_salvar_fornecedores.Text = "Salvar dados";
             this.btn_salvar_fornecedores.UseVisualStyleBackColor = false;
@@ -205,6 +207,7 @@
             this.dataGrid_fornecdores.Name = "dataGrid_fornecdores";
             this.dataGrid_fornecdores.Size = new System.Drawing.Size(838, 176);
             this.dataGrid_fornecdores.TabIndex = 15;
+            this.dataGrid_fornecdores.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_fornecdores_RowHeaderMouseClick);
             // 
             // txb_id
             // 
@@ -242,11 +245,43 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Pesquisar:";
             // 
+            // btn_atualizar_fornecedor
+            // 
+            this.btn_atualizar_fornecedor.BackColor = System.Drawing.Color.Blue;
+            this.btn_atualizar_fornecedor.FlatAppearance.BorderSize = 0;
+            this.btn_atualizar_fornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_atualizar_fornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_atualizar_fornecedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_atualizar_fornecedor.Location = new System.Drawing.Point(429, 268);
+            this.btn_atualizar_fornecedor.Name = "btn_atualizar_fornecedor";
+            this.btn_atualizar_fornecedor.Size = new System.Drawing.Size(121, 30);
+            this.btn_atualizar_fornecedor.TabIndex = 20;
+            this.btn_atualizar_fornecedor.Text = "Atualizar dados";
+            this.btn_atualizar_fornecedor.UseVisualStyleBackColor = false;
+            this.btn_atualizar_fornecedor.Click += new System.EventHandler(this.btn_atualizar_fornecedor_Click);
+            // 
+            // btn_deletar_fornecedor
+            // 
+            this.btn_deletar_fornecedor.BackColor = System.Drawing.Color.Red;
+            this.btn_deletar_fornecedor.FlatAppearance.BorderSize = 0;
+            this.btn_deletar_fornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deletar_fornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deletar_fornecedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_deletar_fornecedor.Location = new System.Drawing.Point(562, 268);
+            this.btn_deletar_fornecedor.Name = "btn_deletar_fornecedor";
+            this.btn_deletar_fornecedor.Size = new System.Drawing.Size(121, 30);
+            this.btn_deletar_fornecedor.TabIndex = 21;
+            this.btn_deletar_fornecedor.Text = "Deletar";
+            this.btn_deletar_fornecedor.UseVisualStyleBackColor = false;
+            this.btn_deletar_fornecedor.Click += new System.EventHandler(this.btn_deletar_fornecedor_Click);
+            // 
             // Tela_fornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 567);
+            this.Controls.Add(this.btn_deletar_fornecedor);
+            this.Controls.Add(this.btn_atualizar_fornecedor);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txb_id);
@@ -299,5 +334,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_atualizar_fornecedor;
+        private System.Windows.Forms.Button btn_deletar_fornecedor;
     }
 }

@@ -14,6 +14,7 @@ namespace ExercicioBanco
         public string Telefone { get; set; }
         public string Nome_fantasia { get; set; }
         public string Inscricao_estadual { get; set; }
+        public int Id { get; set; }
 
     }
 }

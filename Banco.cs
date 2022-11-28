@@ -14,7 +14,7 @@ namespace ExercicioBanco
         internal void inserir(Fornecedor f)
         {
             Conexao conexao = new Conexao();
-            DataTable dt;
+           
 
             try
             {
@@ -37,7 +37,10 @@ namespace ExercicioBanco
 
                 MessageBox.Show("erro de banco " + erro);
             }
-
+            finally
+            {
+                conexao.desconectar();
+            }
         }
       
         public DataTable Select_fornecedores()
@@ -46,8 +49,10 @@ namespace ExercicioBanco
             Conexao conexao1 = new Conexao();
             try
             {
-                string sql = "select cnpj as CNPJ,email as Email,telefone as Telefone ,nome_fatasia as Nome_fantasia, inscricao_estadual as Insceição_estadual,razao_social as Razão_social from tb_fornecedor" ;
+                string sql = "select cnpj as CNPJ,email as Email,telefone as Telefone ,nome_fatasia as Nome_fantasia, inscricao_estadual as Insceição_estadual,razao_social as Razão_social, id as ID from tb_fornecedor" ;
+              
                 MySqlCommand cmd = new MySqlCommand(sql, conexao1.conectar());
+               
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                
                 da.Fill(dt);
@@ -58,7 +63,65 @@ namespace ExercicioBanco
 
                 MessageBox.Show(erro.Message);
             }
+            finally
+            {
+                dt.Dispose();
+                
+                conexao1.desconectar();
+            }
             return dt;
         }
+        internal void Atualizar_fornecedor(Fornecedor f)
+        {
+            try
+            {
+
+                Conexao conexao = new Conexao();
+                string update = "update tb_fornecedor set cnpj = @c, email = @e, telefone = @t, nome_fatasia =@n, inscricao_estadual = @i, razao_social = @r";
+                MySqlCommand cmd = new MySqlCommand(update, conexao.conectar());
+                cmd.Parameters.AddWithValue("@c", f.Cnpj);
+                cmd.Parameters.AddWithValue("@e", f.Email);
+                cmd.Parameters.AddWithValue("@t", f.Telefone);
+                cmd.Parameters.AddWithValue("@n", f.Nome_fantasia);
+                cmd.Parameters.AddWithValue("@i", f.Inscricao_estadual);
+                cmd.Parameters.AddWithValue("@r", f.Razao_social);
+                cmd.ExecuteNonQuery();
+                    MessageBox.Show("Cadastro Atualizado com sucesso ", "Mensagem de Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException erro)
+            {
+
+                MessageBox.Show("erro de banco de dados "+erro);
+            }
+        }
+        internal void Deletar_forncedor(Fornecedor f)
+        {
+            Conexao conexao = new Conexao();
+            try
+            {
+               
+                string delete = "delete from tb_fornecedor where id = @d";
+                MySqlCommand cmd = new MySqlCommand(delete, conexao.conectar());
+                cmd.Parameters.AddWithValue("@c", f.Cnpj);
+                cmd.Parameters.AddWithValue("@e", f.Email);
+                cmd.Parameters.AddWithValue("@t", f.Telefone);
+                cmd.Parameters.AddWithValue("@n", f.Nome_fantasia);
+                cmd.Parameters.AddWithValue("@i", f.Inscricao_estadual);
+                cmd.Parameters.AddWithValue("@r", f.Razao_social);
+                cmd.Parameters.AddWithValue("@d", f.Id);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Dados do Fornecedor Deletado  com Sucesso!", "Mensagem de sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException erro)
+            {
+                MessageBox.Show("erro de banco de dados " + erro);
+
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+        }
+
     }
 }
