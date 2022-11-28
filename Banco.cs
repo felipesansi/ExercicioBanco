@@ -122,6 +122,135 @@ namespace ExercicioBanco
                 conexao.desconectar();
             }
         }
+        internal void inserir_produto(Produto p)
+        {
+            Conexao conexao = new Conexao();
+
+
+            try
+            {
+
+                string sql = "insert into tb_produto (descricao, dt_validade, preco, quantidade)values(@d, @dt, @p, @q )";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao.conectar());
+                cmd.Parameters.AddWithValue("@d", p.Descricao);
+                cmd.Parameters.AddWithValue("@dt", p.Data_validade);
+                cmd.Parameters.AddWithValue("@p", p.Preco);
+                cmd.Parameters.AddWithValue("@q", p.Quantidade);
+              
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto cadastrado com Sucesso!", "Mensagem de sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("erro de banco " + erro);
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+        }
+        public DataTable Select_produto()
+        {
+            DataTable dt = new DataTable();
+            Conexao conexao1 = new Conexao();
+            try
+            {
+                string sql = "select codigo as Código, descricao as Descrição, dt_validade as Validade, preco as preço, quantidade as Quanidade from tb_produto ";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conexao1.conectar());
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+            }
+            catch (MySqlException erro)
+            {
+
+                MessageBox.Show(erro.Message);
+            }
+            finally
+            {
+                dt.Dispose();
+
+                conexao1.desconectar();
+            }
+            return dt;
+        }
+        internal void Atualizar_produto(Produto p)
+        {
+            try
+            {
+
+                Conexao conexao = new Conexao();
+                string update = "update tb_produto set codigo = @c, descricao = @d,  dt_validade = @dt, preco = @p, quantidade=@q";
+                MySqlCommand cmd = new MySqlCommand(update, conexao.conectar());
+                cmd.Parameters.AddWithValue("@c", p.Codigo);
+                cmd.Parameters.AddWithValue("@d", p.Descricao);
+                cmd.Parameters.AddWithValue("@p", p.Preco);
+                cmd.Parameters.AddWithValue("@dt", p.Data_validade);
+                cmd.Parameters.AddWithValue("@q", p.Quantidade);
+                
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto Atualizado com sucesso ", "Mensagem de Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException erro)
+            {
+
+                MessageBox.Show("erro de banco de dados " + erro);
+            }
+        }
+        internal void Deletar_produto(Produto p)
+        {
+            Conexao conexao = new Conexao();
+            try
+            {
+
+                string delete = "delete from tb_produto where codigo = @c";
+                MySqlCommand cmd = new MySqlCommand(delete, conexao.conectar());
+                cmd.Parameters.AddWithValue("@c", p.Codigo);
+              
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Dados do Produto Deletado  com Sucesso!", "Mensagem de sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException erro)
+            {
+                MessageBox.Show("erro de banco de dados " + erro);
+
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+        }
+        public DataTable Pequisar_forncedor(string pequisarPa)
+        {
+           Conexao classe_Conexao = new Conexao();
+            DataTable dt = new DataTable();
+            try
+            {
+                String sql = "SELECT * FROM tb_forncedor where id o LIKE '%" + pequisarPa + "%' or nome_fatasia LIKE '%" + pequisarPa + "%'";
+
+                MySqlCommand cmd = new MySqlCommand(sql, classe_Conexao.conectar());
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                classe_Conexao.desconectar();
+
+            }
+            return dt;
+        }
+
+
 
     }
 }

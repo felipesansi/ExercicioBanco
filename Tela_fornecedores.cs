@@ -111,6 +111,11 @@ namespace ExercicioBanco
                 }
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Banco.Pequisar_forncedor(textBox1.Text);
+        }
     }
 }
 

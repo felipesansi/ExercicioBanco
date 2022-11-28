@@ -39,6 +39,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txb_preco = new System.Windows.Forms.TextBox();
+            this.btn_deletar_produto = new System.Windows.Forms.Button();
+            this.btn_atualizar_produto = new System.Windows.Forms.Button();
+            this.txb_pesquisar_produto = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGrid_produto = new System.Windows.Forms.DataGridView();
+            this.mask_data_v = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_produto)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_fechar_produto
@@ -65,12 +73,13 @@
             this.btn_salvar_produtos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvar_produtos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar_produtos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_salvar_produtos.Location = new System.Drawing.Point(356, 278);
+            this.btn_salvar_produtos.Location = new System.Drawing.Point(289, 285);
             this.btn_salvar_produtos.Name = "btn_salvar_produtos";
-            this.btn_salvar_produtos.Size = new System.Drawing.Size(199, 43);
+            this.btn_salvar_produtos.Size = new System.Drawing.Size(132, 30);
             this.btn_salvar_produtos.TabIndex = 26;
             this.btn_salvar_produtos.Text = "Salvar dados";
             this.btn_salvar_produtos.UseVisualStyleBackColor = false;
+            this.btn_salvar_produtos.Click += new System.EventHandler(this.btn_salvar_produtos_Click);
             // 
             // txb_quantidade
             // 
@@ -151,11 +160,95 @@
             this.txb_preco.Size = new System.Drawing.Size(151, 20);
             this.txb_preco.TabIndex = 29;
             // 
+            // btn_deletar_produto
+            // 
+            this.btn_deletar_produto.BackColor = System.Drawing.Color.Red;
+            this.btn_deletar_produto.FlatAppearance.BorderSize = 0;
+            this.btn_deletar_produto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deletar_produto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deletar_produto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_deletar_produto.Location = new System.Drawing.Point(560, 286);
+            this.btn_deletar_produto.Name = "btn_deletar_produto";
+            this.btn_deletar_produto.Size = new System.Drawing.Size(121, 30);
+            this.btn_deletar_produto.TabIndex = 35;
+            this.btn_deletar_produto.Text = "Deletar";
+            this.btn_deletar_produto.UseVisualStyleBackColor = false;
+            this.btn_deletar_produto.Click += new System.EventHandler(this.btn_deletar_produto_Click);
+            // 
+            // btn_atualizar_produto
+            // 
+            this.btn_atualizar_produto.BackColor = System.Drawing.Color.Blue;
+            this.btn_atualizar_produto.FlatAppearance.BorderSize = 0;
+            this.btn_atualizar_produto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_atualizar_produto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_atualizar_produto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_atualizar_produto.Location = new System.Drawing.Point(427, 286);
+            this.btn_atualizar_produto.Name = "btn_atualizar_produto";
+            this.btn_atualizar_produto.Size = new System.Drawing.Size(121, 30);
+            this.btn_atualizar_produto.TabIndex = 34;
+            this.btn_atualizar_produto.Text = "Atualizar dados";
+            this.btn_atualizar_produto.UseVisualStyleBackColor = false;
+            this.btn_atualizar_produto.Click += new System.EventHandler(this.btn_atualizar_produto_Click);
+            // 
+            // txb_pesquisar_produto
+            // 
+            this.txb_pesquisar_produto.Location = new System.Drawing.Point(95, 296);
+            this.txb_pesquisar_produto.Name = "txb_pesquisar_produto";
+            this.txb_pesquisar_produto.Size = new System.Drawing.Size(151, 20);
+            this.txb_pesquisar_produto.TabIndex = 33;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(10, 298);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 15);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Pesquisar:";
+            // 
+            // dataGrid_produto
+            // 
+            this.dataGrid_produto.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGrid_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_produto.Location = new System.Drawing.Point(28, 332);
+            this.dataGrid_produto.Name = "dataGrid_produto";
+            this.dataGrid_produto.Size = new System.Drawing.Size(838, 176);
+            this.dataGrid_produto.TabIndex = 31;
+            this.dataGrid_produto.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_produto_RowHeaderMouseClick);
+            // 
+            // mask_data_v
+            // 
+            this.mask_data_v.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mask_data_v.Location = new System.Drawing.Point(425, 208);
+            this.mask_data_v.Mask = "00/00/0000";
+            this.mask_data_v.Name = "mask_data_v";
+            this.mask_data_v.Size = new System.Drawing.Size(116, 22);
+            this.mask_data_v.TabIndex = 37;
+            this.mask_data_v.ValidatingType = typeof(System.DateTime);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(282, 209);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 18);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Data de validade:";
+            // 
             // Tela_produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 372);
+            this.ClientSize = new System.Drawing.Size(910, 650);
+            this.Controls.Add(this.mask_data_v);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btn_deletar_produto);
+            this.Controls.Add(this.btn_atualizar_produto);
+            this.Controls.Add(this.txb_pesquisar_produto);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dataGrid_produto);
             this.Controls.Add(this.txb_preco);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
@@ -170,6 +263,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Tela_produto";
             this.Text = "Tela_produto";
+            this.Load += new System.EventHandler(this.Tela_produto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_produto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +283,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txb_preco;
+        private System.Windows.Forms.Button btn_deletar_produto;
+        private System.Windows.Forms.Button btn_atualizar_produto;
+        private System.Windows.Forms.TextBox txb_pesquisar_produto;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGrid_produto;
+        private System.Windows.Forms.MaskedTextBox mask_data_v;
+        private System.Windows.Forms.Label label4;
     }
 }

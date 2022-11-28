@@ -22,5 +22,9 @@ namespace ExercicioBanco
            this.Preco = preco;
           this.Quantidade = quantidade;
         }
+
+        public Produto()
+        {
+        }
     }
 }
