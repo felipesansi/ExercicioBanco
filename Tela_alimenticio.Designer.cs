@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_fechar_alimenticio = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txb_tipo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,23 +45,6 @@
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "Alimenticio";
-            // 
-            // btn_fechar_alimenticio
-            // 
-            this.btn_fechar_alimenticio.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_fechar_alimenticio.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
-            this.btn_fechar_alimenticio.FlatAppearance.BorderSize = 2;
-            this.btn_fechar_alimenticio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btn_fechar_alimenticio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fechar_alimenticio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_fechar_alimenticio.ForeColor = System.Drawing.Color.Red;
-            this.btn_fechar_alimenticio.Location = new System.Drawing.Point(851, 10);
-            this.btn_fechar_alimenticio.Name = "btn_fechar_alimenticio";
-            this.btn_fechar_alimenticio.Size = new System.Drawing.Size(54, 43);
-            this.btn_fechar_alimenticio.TabIndex = 21;
-            this.btn_fechar_alimenticio.Text = "x";
-            this.btn_fechar_alimenticio.UseVisualStyleBackColor = false;
-            this.btn_fechar_alimenticio.Click += new System.EventHandler(this.btn_fechar_alimenticio_Click);
             // 
             // label3
             // 
@@ -118,13 +100,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 350);
             this.Controls.Add(this.btn_salvar_alimenticio);
-            this.Controls.Add(this.btn_fechar_alimenticio);
             this.Controls.Add(this.txb_medida);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txb_tipo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Tela_alimenticio";
             this.Text = "Tela_alimenticio";
             this.ResumeLayout(false);
@@ -135,11 +116,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_fechar_alimenticio;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txb_tipo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txb_medida;
         private System.Windows.Forms.Button btn_salvar_alimenticio;
+        public System.Windows.Forms.TextBox txb_tipo;
+        public System.Windows.Forms.TextBox txb_medida;
     }
 }

@@ -31,7 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alimenticioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Painel_principal = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,8 +43,7 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fornecedoresToolStripMenuItem,
-            this.produtoToolStripMenuItem,
-            this.alimenticioToolStripMenuItem});
+            this.produtoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(915, 24);
@@ -65,13 +63,6 @@
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
-            // 
-            // alimenticioToolStripMenuItem
-            // 
-            this.alimenticioToolStripMenuItem.Name = "alimenticioToolStripMenuItem";
-            this.alimenticioToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.alimenticioToolStripMenuItem.Text = "Alimenticio";
-            this.alimenticioToolStripMenuItem.Click += new System.EventHandler(this.alimenticioToolStripMenuItem_Click);
             // 
             // Painel_principal
             // 
@@ -130,7 +121,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alimenticioToolStripMenuItem;
         private System.Windows.Forms.Panel Painel_principal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

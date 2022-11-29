@@ -130,5 +130,37 @@ namespace ExercicioBanco
                 dataGrid_produto.DataSource = dt;
             }
         }
+
+        private void check_nao_alimenticio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_nao_alimenticio.Checked) 
+            { 
+                btn_salvar_produtos.Enabled = true;
+            }
+            else
+            {
+                btn_salvar_produtos.Enabled = false;
+            }
+        }
+
+        private void check_alimenticio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_alimenticio.Checked)
+            {
+                btn_terminar_cadastro.Enabled = true;
+            }
+            else
+            {
+                    btn_terminar_cadastro.Enabled= false;   
+            }
+        }
+
+        private void btn_terminar_cadastro_Click(object sender, EventArgs e)
+        {
+
+            Tela_alimenticio tela = new Tela_alimenticio();
+            tela.ShowDialog();
+            
+        }
     }
 }

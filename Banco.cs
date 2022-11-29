@@ -273,6 +273,34 @@ namespace ExercicioBanco
             }
             return dt;
         }
+        internal void inserir_alimento(Produto p, Alimenticio a)
+        {
+            Conexao conexao = new Conexao();
+
+
+            try
+            {
+
+                string sql = "insert into tb_alimento ()values(@c, @m, @tipo )";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao.conectar());
+                cmd.Parameters.AddWithValue("@c", p.Codigo);
+                cmd.Parameters.AddWithValue("@m", a.Medida);
+                cmd.Parameters.AddWithValue("@tipo", a.Tipo);
+                
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto cadastrado com Sucesso!", "Mensagem de sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("erro de banco " + erro);
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+        }
 
 
 

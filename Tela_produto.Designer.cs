@@ -46,6 +46,9 @@
             this.dataGrid_produto = new System.Windows.Forms.DataGridView();
             this.mask_data_v = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.check_nao_alimenticio = new System.Windows.Forms.CheckBox();
+            this.check_alimenticio = new System.Windows.Forms.CheckBox();
+            this.btn_terminar_cadastro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_produto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,11 +72,12 @@
             // btn_salvar_produtos
             // 
             this.btn_salvar_produtos.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_salvar_produtos.Enabled = false;
             this.btn_salvar_produtos.FlatAppearance.BorderSize = 0;
             this.btn_salvar_produtos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvar_produtos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar_produtos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_salvar_produtos.Location = new System.Drawing.Point(289, 285);
+            this.btn_salvar_produtos.Location = new System.Drawing.Point(691, 329);
             this.btn_salvar_produtos.Name = "btn_salvar_produtos";
             this.btn_salvar_produtos.Size = new System.Drawing.Size(132, 30);
             this.btn_salvar_produtos.TabIndex = 26;
@@ -83,7 +87,7 @@
             // 
             // txb_quantidade
             // 
-            this.txb_quantidade.Location = new System.Drawing.Point(356, 118);
+            this.txb_quantidade.Location = new System.Drawing.Point(314, 162);
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(151, 20);
             this.txb_quantidade.TabIndex = 22;
@@ -92,7 +96,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(260, 118);
+            this.label5.Location = new System.Drawing.Point(218, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 18);
             this.label5.TabIndex = 21;
@@ -100,7 +104,7 @@
             // 
             // txb_descricao
             // 
-            this.txb_descricao.Location = new System.Drawing.Point(661, 97);
+            this.txb_descricao.Location = new System.Drawing.Point(586, 141);
             this.txb_descricao.Multiline = true;
             this.txb_descricao.Name = "txb_descricao";
             this.txb_descricao.Size = new System.Drawing.Size(232, 41);
@@ -110,7 +114,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(550, 117);
+            this.label3.Location = new System.Drawing.Point(490, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 18);
             this.label3.TabIndex = 18;
@@ -119,7 +123,7 @@
             // txb_codigo
             // 
             this.txb_codigo.Enabled = false;
-            this.txb_codigo.Location = new System.Drawing.Point(98, 110);
+            this.txb_codigo.Location = new System.Drawing.Point(102, 154);
             this.txb_codigo.Multiline = true;
             this.txb_codigo.Name = "txb_codigo";
             this.txb_codigo.Size = new System.Drawing.Size(67, 28);
@@ -139,7 +143,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 117);
+            this.label2.Location = new System.Drawing.Point(29, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 18);
             this.label2.TabIndex = 27;
@@ -149,7 +153,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 209);
+            this.label7.Location = new System.Drawing.Point(31, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 18);
             this.label7.TabIndex = 28;
@@ -157,7 +161,7 @@
             // 
             // txb_preco
             // 
-            this.txb_preco.Location = new System.Drawing.Point(91, 210);
+            this.txb_preco.Location = new System.Drawing.Point(95, 254);
             this.txb_preco.Name = "txb_preco";
             this.txb_preco.Size = new System.Drawing.Size(151, 20);
             this.txb_preco.TabIndex = 29;
@@ -169,7 +173,7 @@
             this.btn_deletar_produto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_deletar_produto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_deletar_produto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_deletar_produto.Location = new System.Drawing.Point(560, 286);
+            this.btn_deletar_produto.Location = new System.Drawing.Point(564, 330);
             this.btn_deletar_produto.Name = "btn_deletar_produto";
             this.btn_deletar_produto.Size = new System.Drawing.Size(121, 30);
             this.btn_deletar_produto.TabIndex = 35;
@@ -184,7 +188,7 @@
             this.btn_atualizar_produto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_atualizar_produto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_atualizar_produto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_atualizar_produto.Location = new System.Drawing.Point(427, 286);
+            this.btn_atualizar_produto.Location = new System.Drawing.Point(431, 330);
             this.btn_atualizar_produto.Name = "btn_atualizar_produto";
             this.btn_atualizar_produto.Size = new System.Drawing.Size(121, 30);
             this.btn_atualizar_produto.TabIndex = 34;
@@ -194,7 +198,7 @@
             // 
             // txb_pesquisar_produto
             // 
-            this.txb_pesquisar_produto.Location = new System.Drawing.Point(95, 296);
+            this.txb_pesquisar_produto.Location = new System.Drawing.Point(99, 340);
             this.txb_pesquisar_produto.Name = "txb_pesquisar_produto";
             this.txb_pesquisar_produto.Size = new System.Drawing.Size(151, 20);
             this.txb_pesquisar_produto.TabIndex = 33;
@@ -204,7 +208,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(10, 298);
+            this.label9.Location = new System.Drawing.Point(14, 342);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 15);
             this.label9.TabIndex = 32;
@@ -214,7 +218,7 @@
             // 
             this.dataGrid_produto.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGrid_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_produto.Location = new System.Drawing.Point(28, 332);
+            this.dataGrid_produto.Location = new System.Drawing.Point(32, 376);
             this.dataGrid_produto.Name = "dataGrid_produto";
             this.dataGrid_produto.Size = new System.Drawing.Size(838, 176);
             this.dataGrid_produto.TabIndex = 31;
@@ -223,7 +227,7 @@
             // mask_data_v
             // 
             this.mask_data_v.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mask_data_v.Location = new System.Drawing.Point(425, 208);
+            this.mask_data_v.Location = new System.Drawing.Point(429, 252);
             this.mask_data_v.Mask = "00/00/0000";
             this.mask_data_v.Name = "mask_data_v";
             this.mask_data_v.Size = new System.Drawing.Size(116, 22);
@@ -234,17 +238,58 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(282, 209);
+            this.label4.Location = new System.Drawing.Point(286, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 18);
             this.label4.TabIndex = 36;
             this.label4.Text = "Data de validade:";
+            // 
+            // check_nao_alimenticio
+            // 
+            this.check_nao_alimenticio.AutoSize = true;
+            this.check_nao_alimenticio.Location = new System.Drawing.Point(316, 76);
+            this.check_nao_alimenticio.Name = "check_nao_alimenticio";
+            this.check_nao_alimenticio.Size = new System.Drawing.Size(138, 17);
+            this.check_nao_alimenticio.TabIndex = 38;
+            this.check_nao_alimenticio.Text = "Produto Não alimenticio";
+            this.check_nao_alimenticio.UseVisualStyleBackColor = true;
+            this.check_nao_alimenticio.CheckedChanged += new System.EventHandler(this.check_nao_alimenticio_CheckedChanged);
+            // 
+            // check_alimenticio
+            // 
+            this.check_alimenticio.AutoSize = true;
+            this.check_alimenticio.Location = new System.Drawing.Point(500, 76);
+            this.check_alimenticio.Name = "check_alimenticio";
+            this.check_alimenticio.Size = new System.Drawing.Size(76, 17);
+            this.check_alimenticio.TabIndex = 39;
+            this.check_alimenticio.Text = "Alimenticio";
+            this.check_alimenticio.UseVisualStyleBackColor = true;
+            this.check_alimenticio.CheckedChanged += new System.EventHandler(this.check_alimenticio_CheckedChanged);
+            // 
+            // btn_terminar_cadastro
+            // 
+            this.btn_terminar_cadastro.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_terminar_cadastro.Enabled = false;
+            this.btn_terminar_cadastro.FlatAppearance.BorderSize = 0;
+            this.btn_terminar_cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_terminar_cadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_terminar_cadastro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_terminar_cadastro.Location = new System.Drawing.Point(293, 329);
+            this.btn_terminar_cadastro.Name = "btn_terminar_cadastro";
+            this.btn_terminar_cadastro.Size = new System.Drawing.Size(132, 41);
+            this.btn_terminar_cadastro.TabIndex = 40;
+            this.btn_terminar_cadastro.Text = "Terminar Cadastro";
+            this.btn_terminar_cadastro.UseVisualStyleBackColor = false;
+            this.btn_terminar_cadastro.Click += new System.EventHandler(this.btn_terminar_cadastro_Click);
             // 
             // Tela_produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 650);
+            this.Controls.Add(this.btn_terminar_cadastro);
+            this.Controls.Add(this.check_alimenticio);
+            this.Controls.Add(this.check_nao_alimenticio);
             this.Controls.Add(this.mask_data_v);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_deletar_produto);
@@ -293,5 +338,8 @@
         private System.Windows.Forms.DataGridView dataGrid_produto;
         private System.Windows.Forms.MaskedTextBox mask_data_v;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox check_nao_alimenticio;
+        private System.Windows.Forms.CheckBox check_alimenticio;
+        private System.Windows.Forms.Button btn_terminar_cadastro;
     }
 }
