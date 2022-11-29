@@ -23,6 +23,16 @@ namespace ExercicioBanco
       Banco Banco = new Banco();
         DataTable dt;
         Conexao conexao = new Conexao();
+        private void Limpar_campos()
+        {
+            txb_cnpj.Clear();
+            txb_email.Clear();
+            txb_id.Clear();
+            txb_inscricao.Clear();
+            txb_fantasia.Clear();
+            mask_telefone.Clear();
+            txb_razaoS.Clear();
+        }
        
         private void Tela_fornecedores_Load(object sender, EventArgs e)
         {
@@ -56,6 +66,7 @@ namespace ExercicioBanco
                 banco .inserir(fornecedor);
                 dt = Banco.Select_fornecedores();
                 dataGrid_fornecdores.DataSource = dt;
+                Limpar_campos();
             }
         }
 
@@ -91,6 +102,11 @@ namespace ExercicioBanco
                 Banco.Atualizar_fornecedor(fornecedor);
                 dt = Banco.Select_fornecedores();
                 dataGrid_fornecdores.DataSource = dt;
+                Limpar_campos();
+            }
+            else
+            {
+                MessageBox.Show("Selecione a linha que deseja atualizar", "Mensagem de aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -108,13 +124,23 @@ namespace ExercicioBanco
                     Banco.Deletar_forncedor(fornecedor);
                   dt =  Banco.Select_fornecedores();
                     dataGrid_fornecdores.DataSource = dt;
+                    Limpar_campos();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Selecione a linha que deseja deletar", "Mensagem de aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txb_pesquisa_fornecedor_TextChanged(object sender, EventArgs e)
         {
-            Banco.Pequisar_forncedor(textBox1.Text);
+            string pesquisarFornecedor = txb_pesquisa_fornecedor.Text;
+            if (pesquisarFornecedor!= null)
+            {
+                dt = Banco.Pequisar_forncedor(pesquisarFornecedor);
+                dataGrid_fornecdores.DataSource = dt;
+            }
         }
     }
 }

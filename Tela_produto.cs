@@ -18,8 +18,16 @@ namespace ExercicioBanco
         }
         Banco banco = new Banco();
         Produto produto = new Produto();
-
         DataTable dt;
+        
+        private void Limpa_campos()
+        {
+            txb_codigo.Clear();
+            txb_descricao.Clear();
+            txb_preco.Clear();
+            txb_quantidade.Clear();
+            txb_pesquisar_produto.Clear();
+        }
         private void btn_fechar_produto_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -27,6 +35,10 @@ namespace ExercicioBanco
 
         private void btn_salvar_produtos_Click(object sender, EventArgs e)
         {
+            if (txb_codigo.Text== String.Empty|| txb_descricao.Text == String.Empty||  txb_preco.Text == String.Empty ||txb_quantidade.Text == String.Empty )
+            {
+
+            }
             produto.Descricao = txb_descricao.Text;
             produto.Data_validade = DateTime.Parse(mask_data_v.Text);
             produto.Preco = double.Parse(txb_preco.Text);
@@ -73,9 +85,13 @@ namespace ExercicioBanco
                   banco.Deletar_produto(produto);
                     dt = banco.Select_produto();
                     dataGrid_produto.DataSource = dt;
-                   
+                    Limpa_campos();
                    
                 }
+            }
+            else
+            {
+                MessageBox.Show("Selecione a linha que deseja atualizar", "Mensagem de aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         
@@ -94,9 +110,24 @@ namespace ExercicioBanco
                 banco.Deletar_produto(produto);
                 dt = banco.Select_produto();
                 dataGrid_produto.DataSource = dt;
+                Limpa_campos();
 
 
+            }
+            else
+            {
+                MessageBox.Show("Selecione a linha que deseja deletar", "Mensagem de aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        private void txb_pesquisar_produto_TextChanged(object sender, EventArgs e)
+        {
+            string pesquisar_produto = txb_pesquisar_produto.Text;
+            
+            if (pesquisar_produto!= null)
+            {
+                dt =banco.Pequisar_produto(pesquisar_produto);
+                dataGrid_produto.DataSource = dt;
             }
         }
     }

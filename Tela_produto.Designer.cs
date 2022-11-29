@@ -118,9 +118,11 @@
             // 
             // txb_codigo
             // 
-            this.txb_codigo.Location = new System.Drawing.Point(91, 118);
+            this.txb_codigo.Enabled = false;
+            this.txb_codigo.Location = new System.Drawing.Point(98, 110);
+            this.txb_codigo.Multiline = true;
             this.txb_codigo.Name = "txb_codigo";
-            this.txb_codigo.Size = new System.Drawing.Size(151, 20);
+            this.txb_codigo.Size = new System.Drawing.Size(67, 28);
             this.txb_codigo.TabIndex = 17;
             // 
             // label1
@@ -196,6 +198,7 @@
             this.txb_pesquisar_produto.Name = "txb_pesquisar_produto";
             this.txb_pesquisar_produto.Size = new System.Drawing.Size(151, 20);
             this.txb_pesquisar_produto.TabIndex = 33;
+            this.txb_pesquisar_produto.TextChanged += new System.EventHandler(this.txb_pesquisar_produto_TextChanged);
             // 
             // label9
             // 

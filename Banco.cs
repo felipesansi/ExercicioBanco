@@ -249,6 +249,33 @@ namespace ExercicioBanco
             }
             return dt;
         }
+        public DataTable Pequisar_produto(string pequisarPa)
+        {
+            Conexao classe_Conexao = new Conexao();
+            DataTable dt = new DataTable();
+            try
+            {
+                String sql = "SELECT * FROM tb_produto where codigo  LIKE '%" + pequisarPa + "%'";
+
+                MySqlCommand cmd = new MySqlCommand(sql, classe_Conexao.conectar());
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                classe_Conexao.desconectar();
+
+            }
+            return dt;
+        }
+
+
+
 
 
 

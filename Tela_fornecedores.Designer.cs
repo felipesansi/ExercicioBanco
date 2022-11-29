@@ -46,7 +46,7 @@
             this.dataGrid_fornecdores = new System.Windows.Forms.DataGridView();
             this.txb_id = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txb_pesquisa_fornecedor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_atualizar_fornecedor = new System.Windows.Forms.Button();
             this.btn_deletar_fornecedor = new System.Windows.Forms.Button();
@@ -228,13 +228,13 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "ID:";
             // 
-            // textBox1
+            // txb_pesquisa_fornecedor
             // 
-            this.textBox1.Location = new System.Drawing.Point(97, 278);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txb_pesquisa_fornecedor.Location = new System.Drawing.Point(97, 278);
+            this.txb_pesquisa_fornecedor.Name = "txb_pesquisa_fornecedor";
+            this.txb_pesquisa_fornecedor.Size = new System.Drawing.Size(151, 20);
+            this.txb_pesquisa_fornecedor.TabIndex = 19;
+            this.txb_pesquisa_fornecedor.TextChanged += new System.EventHandler(this.txb_pesquisa_fornecedor_TextChanged);
             // 
             // label9
             // 
@@ -283,7 +283,7 @@
             this.ClientSize = new System.Drawing.Size(931, 567);
             this.Controls.Add(this.btn_deletar_fornecedor);
             this.Controls.Add(this.btn_atualizar_fornecedor);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txb_pesquisa_fornecedor);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txb_id);
             this.Controls.Add(this.label8);
@@ -333,7 +333,7 @@
         private System.Windows.Forms.DataGridView dataGrid_fornecdores;
         private System.Windows.Forms.TextBox txb_id;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txb_pesquisa_fornecedor;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_atualizar_fornecedor;
         private System.Windows.Forms.Button btn_deletar_fornecedor;
